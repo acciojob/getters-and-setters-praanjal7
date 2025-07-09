@@ -1,7 +1,22 @@
 class Person {
   constructor(name, age) {
-    this.name = name;  // Public property
-    this.age = age;   // Public property
+    this._name = name;
+    this._age = age;
+  }
+
+  // Getter for name
+  get name() {
+    return this._name;
+  }
+
+  // Setter for age
+  set age(newAge) {
+    this._age = newAge;
+  }
+
+  // Getter for age (needed to access the value after setting)
+  get age() {
+    return this._age;
   }
 }
 
